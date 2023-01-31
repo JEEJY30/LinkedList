@@ -1,11 +1,11 @@
-
 public class LinkedList {
     Node head;
 
-    public void insert(int data) {
+    void insert(int age, String name, double gpa) {
         Node node = new Node();
-        node.data = data;
-
+        node.age = age;
+        node.name = name;
+        node.gpa = gpa;
         node.next = null;
 
         if (head == null) {
@@ -19,24 +19,26 @@ public class LinkedList {
         }
     }
 
-    public void insertAtStart(int data) {
+    void insertAtStart(int age, String name, double gpa) {
         Node node = new Node();
-        node.data = data;
-
+        node.age = age;
+        node.name = name;
+        node.gpa = gpa;
         node.next = null;
 
         node.next = head;
         head = node;
     }
 
-    public void insertAt(int index, int data) {
+    void insertAt(int index, int age, String name, double gpa) {
         Node node = new Node();
-        node.data = data;
-
+        node.age = age;
+        node.name = name;
+        node.gpa = gpa;
         node.next = null;
 
         if (index == 0) {
-            insertAtStart(data);
+            insertAtStart(age, name, gpa);
         } else {
             Node current = head;
             for (int i = 0; i < index - 1; i++) {
@@ -47,9 +49,8 @@ public class LinkedList {
         }
     }
 
-    public void deleteAt(int index) {
+    void deleteAt(int index) {
         if (index == 0) {
-            System.out.println("deleted :" + head.data);
             head = head.next;
         } else {
             Node current = head;
@@ -59,17 +60,16 @@ public class LinkedList {
             }
             deleted = current.next;
             current.next = deleted.next;
-            System.out.println("deleted " + deleted.data);
             deleted = null;
         }
     }
 
-    public void show() {
-        Node node = head;
-        while (node.next != null) {
-            System.out.println(node.data);
-            node = node.next;
+    void show() {
+        Node exiNode = head;
+        while (exiNode.next != null) {
+            System.out.println("Name -> " + exiNode.name + "| Age -> " + exiNode.age + "| GPA-> " + exiNode.gpa);
+            exiNode = exiNode.next;
         }
-        System.out.println(node.data);
+        System.out.println("Name -> " + exiNode.name + "| Age -> " + exiNode.age + "| GPA-> " + exiNode.gpa);
     }
 }

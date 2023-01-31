@@ -1,5 +1,8 @@
 
 public class Node {
-    int data;
+    int age;
+    String name;
+    double gpa;
+
     Node next;
 }
